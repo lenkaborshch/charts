@@ -68,12 +68,11 @@ const ControlPanel: FC<ControlPanelProps> = ({
           className="input"
         />
       </div>
-      {children}
       <div className="types">
         {availableTypes.map(el => {
           const {id, type: typeName, title} = el;
           return (
-            <div className="type">
+            <div key={id} className="type">
               <input
                 type="radio"
                 id={id}
@@ -89,6 +88,7 @@ const ControlPanel: FC<ControlPanelProps> = ({
           );
         })}
       </div>
+      {children}
     </div>
   );
 };
